@@ -1,0 +1,55 @@
+package com.wGateway;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = "info")
+public class Properties {
+	
+	private String adminUrl;
+	private String adminBaseUrl;
+	
+	private String assetsUrl;
+	private String assetsBaseUrl;
+	
+	private String memberUrl;
+	private String memberBaseUrl;
+	
+	public String getAdminUrl() {
+		return adminUrl;
+	}
+	public void setAdminUrl(String adminUrl) {
+		this.adminUrl = adminUrl;
+	}
+	public String getAdminBaseUrl() {
+		return adminBaseUrl;
+	}
+	public void setAdminBaseUrl(String adminBaseUrl) {
+		this.adminBaseUrl = adminBaseUrl;
+	}
+	public String getAssetsUrl() {
+		return assetsUrl;
+	}
+	public void setAssetsUrl(String assetsUrl) {
+		this.assetsUrl = assetsUrl;
+	}
+	public String getAssetsBaseUrl() {
+		return assetsBaseUrl;
+	}
+	public void setAssetsBaseUrl(String assetsBaseUrl) {
+		this.assetsBaseUrl = assetsBaseUrl;
+	}
+	public String getMemberUrl() {
+		return memberUrl;
+	}
+	public void setMemberUrl(String memberUrl) {
+		this.memberUrl = memberUrl;
+	}
+	public String getMemberBaseUrl() {
+		return memberBaseUrl;
+	}
+	public void setMemberBaseUrl(String memberBaseUrl) {
+		this.memberBaseUrl = memberBaseUrl;
+	}
+}

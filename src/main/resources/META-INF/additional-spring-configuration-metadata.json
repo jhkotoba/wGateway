@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "info.admin-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.admin-url'"
+  },
+  {
+    "name": "info.assets-base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.assets-base-url'"
+  },
+  {
+    "name": "info.assets-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.assets-url'"
+  },
+  {
+    "name": "info.member-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.member-url'"
+  },
+  {
+    "name": "info.member-base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.member-base-url'"
+  },
+  {
+    "name": "info.admin-base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.admin-base-url'"
+  },
+  {
+    "name": "info.member-login-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.member-login-url'"
+  }
+]}
