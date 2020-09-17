@@ -111,23 +111,20 @@ public class WGatewayWebClient {
 		
 		return webClient.post()
 				.uri(info.getMemberUrl() + "/api/member/loginProcess")
-				.cookies(cookies -> {					
-					for (String key : request.getCookies().keySet()) {
-						cookies.add(key, request.getCookies().get(key).get(0).getValue());
-					}
-				})
 				.contentType(MediaType.APPLICATION_JSON)
 		        .accept(MediaType.APPLICATION_JSON)
 		        .bodyValue(bodyValue)
 				.retrieve()
 				.bodyToMono(Map.class)
-				.flatMap(map -> {										
-					response.addCookie(
-						ResponseCookie.from(Constant.TOKEN, map.get("jwt").toString())
-							.path("/")
-							.maxAge(Duration.ofHours(10))
-							.build()
-					);
+				.flatMap(map -> {
+					if(map.get("jwt") != null) {
+						response.addCookie(
+							ResponseCookie.from(Constant.TOKEN, map.get("jwt").toString())
+								.path("/")
+								.maxAge(Duration.ofHours(10))
+								.build()
+						);
+					}
 					map.remove("jwt");
 					return Mono.just(map);
 				});
