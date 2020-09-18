@@ -116,7 +116,7 @@ public class WGatewayWebClient {
 		        .bodyValue(bodyValue)
 				.retrieve()
 				.bodyToMono(Map.class)
-				.flatMap(map -> {
+				.map(map -> {
 					if(map.get("jwt") != null) {
 						response.addCookie(
 							ResponseCookie.from(Constant.TOKEN, map.get("jwt").toString())
@@ -126,7 +126,7 @@ public class WGatewayWebClient {
 						);
 					}
 					map.remove("jwt");
-					return Mono.just(map);
+					return map;
 				});
 	}
 }
