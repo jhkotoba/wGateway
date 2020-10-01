@@ -10,6 +10,9 @@ public class Properties {
 	private String adminUrl;
 	private String adminBaseUrl;
 	
+	private String assetsPuiUrl;
+	private String assetsPuiBaseUrl;
+	
 	private String assetsUrl;
 	private String assetsBaseUrl;
 	
@@ -27,6 +30,18 @@ public class Properties {
 	}
 	public void setAdminBaseUrl(String adminBaseUrl) {
 		this.adminBaseUrl = adminBaseUrl;
+	}
+	public String getAssetsPuiUrl() {
+		return assetsPuiUrl;
+	}
+	public void setAssetsPuiUrl(String assetsPuiUrl) {
+		this.assetsPuiUrl = assetsPuiUrl;
+	}
+	public String getAssetsPuiBaseUrl() {
+		return assetsPuiBaseUrl;
+	}
+	public void setAssetsPuiBaseUrl(String assetsPuiBaseUrl) {
+		this.assetsPuiBaseUrl = assetsPuiBaseUrl;
 	}
 	public String getAssetsUrl() {
 		return assetsUrl;
@@ -52,4 +67,6 @@ public class Properties {
 	public void setMemberBaseUrl(String memberBaseUrl) {
 		this.memberBaseUrl = memberBaseUrl;
 	}
+	
+	
 }

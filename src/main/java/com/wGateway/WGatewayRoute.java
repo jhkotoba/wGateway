@@ -17,7 +17,7 @@ public class WGatewayRoute {
 		return builder.routes()
 				.route("wAssetsPUI", r -> r 
 					.path("/assets")					
-					.uri(info.getAssetsBaseUrl())
+					.uri(info.getAssetsPuiBaseUrl())
 				).route("login", r -> r
 					.path("/member/login")					
 					.uri(info.getMemberBaseUrl() + "/login")

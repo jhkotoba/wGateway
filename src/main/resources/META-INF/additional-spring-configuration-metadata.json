@@ -33,5 +33,15 @@
     "name": "info.member-login-url",
     "type": "java.lang.String",
     "description": "A description for 'info.member-login-url'"
+  },
+  {
+    "name": "info.assets-pui-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.assets-pui-url'"
+  },
+  {
+    "name": "info.assets-pui-base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'info.assets-pui-base-url'"
   }
 ]}
