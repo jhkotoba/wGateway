@@ -4,8 +4,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "info")
-public class Properties {
+@ConfigurationProperties(prefix = "modules")
+public class Modules {
+	
+	private String gatewayUrl;
 	
 	private String adminUrl;
 	private String adminBaseUrl;
@@ -19,6 +21,12 @@ public class Properties {
 	private String memberUrl;
 	private String memberBaseUrl;
 	
+	public String getGatewayUrl() {
+		return gatewayUrl;
+	}
+	public void setGatewayUrl(String gatewayUrl) {
+		this.gatewayUrl = gatewayUrl;
+	}
 	public String getAdminUrl() {
 		return adminUrl;
 	}
@@ -67,6 +75,4 @@ public class Properties {
 	public void setMemberBaseUrl(String memberBaseUrl) {
 		this.memberBaseUrl = memberBaseUrl;
 	}
-	
-	
 }

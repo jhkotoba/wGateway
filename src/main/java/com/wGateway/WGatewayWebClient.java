@@ -26,7 +26,7 @@ public class WGatewayWebClient {
     private WebClient.Builder builder;
 	
 	@Autowired
-	private Properties info;
+	private Modules modules;
 	
 	/**
 	 * GET API
@@ -40,9 +40,9 @@ public class WGatewayWebClient {
 		StringBuilder uri = null;
 		
 		switch(module) {
-		case "admin" : uri = new StringBuilder(info.getAdminUrl()); break;
-		case "assets" : uri = new StringBuilder(info.getAssetsUrl()); break;
-		case "member" : uri = new StringBuilder(info.getMemberUrl()); break;
+		case "admin" : uri = new StringBuilder(modules.getAdminUrl()); break;
+		case "assets" : uri = new StringBuilder(modules.getAssetsUrl()); break;
+		case "member" : uri = new StringBuilder(modules.getMemberUrl()); break;
 		default : return null;
 		}
 		
@@ -74,9 +74,9 @@ public class WGatewayWebClient {
 		StringBuilder uri = null;
 		
 		switch(module) {
-		case "admin" : uri = new StringBuilder(info.getAdminUrl()); break;
-		case "assets" : uri = new StringBuilder(info.getAssetsUrl()); break;
-		case "member" : uri = new StringBuilder(info.getMemberUrl()); break;
+		case "admin" : uri = new StringBuilder(modules.getAdminUrl()); break;
+		case "assets" : uri = new StringBuilder(modules.getAssetsUrl()); break;
+		case "member" : uri = new StringBuilder(modules.getMemberUrl()); break;
 		default : return null;
 		}
 		
@@ -110,14 +110,14 @@ public class WGatewayWebClient {
 		WebClient webClient = builder.build();
 		
 		return webClient.post()
-				.uri(info.getMemberUrl() + "/api/member/loginProcess")
+				.uri(modules.getMemberUrl() + "/api/member/loginProcess")
 				.contentType(MediaType.APPLICATION_JSON)
 		        .accept(MediaType.APPLICATION_JSON)
 		        .bodyValue(bodyValue)
 				.retrieve()
 				.bodyToMono(Map.class)
 				.map(map -> {
-					if(map.get("jwt") != null) {
+					if(Objects.nonNull(map.get("jwt"))) {
 						response.addCookie(
 							ResponseCookie.from(Constant.TOKEN, map.get("jwt").toString())
 								.path("/")

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class WGatewayRoute {
 	
 	@Autowired
-	private Properties info;
+	private Modules info;
 	
 	@Bean
 	public RouteLocator wGatewayRouteLocator(RouteLocatorBuilder builder) {

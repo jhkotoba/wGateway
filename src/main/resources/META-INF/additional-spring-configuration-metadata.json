@@ -1,47 +1,47 @@
 {"properties": [
   {
-    "name": "info.admin-url",
+    "name": "modules.admin-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.admin-url'"
+    "description": "A description for 'modules.admin-url'"
   },
   {
-    "name": "info.assets-base-url",
+    "name": "modules.assets-pui-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.assets-base-url'"
+    "description": "A description for 'modules.assets-pui-url'"
   },
   {
-    "name": "info.assets-url",
+    "name": "modules.member-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.assets-url'"
+    "description": "A description for 'modules.member-url'"
   },
   {
-    "name": "info.member-url",
+    "name": "modules.assets-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.member-url'"
+    "description": "A description for 'modules.assets-url'"
   },
   {
-    "name": "info.member-base-url",
+    "name": "modules.admin-base-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.member-base-url'"
+    "description": "A description for 'modules.admin-base-url'"
   },
   {
-    "name": "info.admin-base-url",
+    "name": "modules.member-base-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.admin-base-url'"
+    "description": "A description for 'modules.member-base-url'"
   },
   {
-    "name": "info.member-login-url",
+    "name": "modules.assets-pui-base-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.member-login-url'"
+    "description": "A description for 'modules.assets-pui-base-url'"
   },
   {
-    "name": "info.assets-pui-url",
+    "name": "modules.assets-base-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.assets-pui-url'"
+    "description": "A description for 'modules.assets-base-url'"
   },
   {
-    "name": "info.assets-pui-base-url",
+    "name": "modules.gateway-url",
     "type": "java.lang.String",
-    "description": "A description for 'info.assets-pui-base-url'"
+    "description": "A description for 'modules.gateway-url'"
   }
 ]}
