@@ -58,7 +58,7 @@ public class WGatewayWebClient {
 		return webClient.get()
 				.uri(uri.toString())
 				.retrieve()
-				.bodyToFlux(Map.class);
+				.bodyToFlux(Object.class);
 	}	
 	
 	/**
