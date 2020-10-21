@@ -10,17 +10,24 @@ import org.springframework.stereotype.Component;
 public class WGatewayRoute {
 	
 	@Autowired
-	private Modules info;
+	private Modules modules;
 	
+	/**
+	 * 게이트웨이 route
+	 * @param builder
+	 * @return
+	 */
 	@Bean
 	public RouteLocator wGatewayRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route("wAssetsPUI", r -> r 
-					.path("/assets")					
-					.uri(info.getAssetsPuiBaseUrl())
+				//자산관리PC 페이지 이동
+				.route("wAssetsPUI", r -> r
+					.path("/assets")
+					.uri(modules.getAssetsPuiBaseUrl())
+				//로그인 페이지 이동
 				).route("login", r -> r
-					.path("/member/login")					
-					.uri(info.getMemberBaseUrl() + "/login")
+					.path("/member/login")
+					.uri(modules.getMemberBaseUrl() + "/login")
 				)
 				.build();
 	}
