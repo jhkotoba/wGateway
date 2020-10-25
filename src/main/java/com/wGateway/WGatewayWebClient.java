@@ -34,7 +34,7 @@ public class WGatewayWebClient {
 	 * @return Flux<?>
 	 */
 	@GetMapping(value = "/api/{module}/{apiurl}")
-	public Flux<?> getApi(ServerHttpRequest request, @PathVariable String module, @PathVariable String apiurl) {
+	public Mono<?> getApi(ServerHttpRequest request, @PathVariable String module, @PathVariable String apiurl) {
 		
 		WebClient webClient = builder.build();		
 		StringBuilder uri = null;
@@ -63,7 +63,7 @@ public class WGatewayWebClient {
 					}
 				})
 				.retrieve()
-				.bodyToFlux(Object.class);
+				.bodyToMono(Object.class);
 	}	
 	
 	/**
