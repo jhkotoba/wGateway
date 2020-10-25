@@ -57,6 +57,11 @@ public class WGatewayWebClient {
 		
 		return webClient.get()
 				.uri(uri.toString())
+				.cookies(cookies -> {					
+					for (String key : request.getCookies().keySet()) {
+						cookies.add(key, request.getCookies().get(key).get(0).getValue());
+					}
+				})
 				.retrieve()
 				.bodyToFlux(Object.class);
 	}	
