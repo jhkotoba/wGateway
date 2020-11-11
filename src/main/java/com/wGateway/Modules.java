@@ -15,6 +15,9 @@ public class Modules {
 	private String assetsPuiUrl;
 	private String assetsPuiBaseUrl;
 	
+	private String assetsMuiUrl;
+	private String assetsMuiBaseUrl;
+	
 	private String assetsUrl;
 	private String assetsBaseUrl;
 	
@@ -51,6 +54,18 @@ public class Modules {
 	public void setAssetsPuiBaseUrl(String assetsPuiBaseUrl) {
 		this.assetsPuiBaseUrl = assetsPuiBaseUrl;
 	}
+	public String getAssetsMuiUrl() {
+		return assetsMuiUrl;
+	}
+	public void setAssetsMuiUrl(String assetsMuiUrl) {
+		this.assetsMuiUrl = assetsMuiUrl;
+	}
+	public String getAssetsMuiBaseUrl() {
+		return assetsMuiBaseUrl;
+	}
+	public void setAssetsMuiBaseUrl(String assetsMuiBaseUrl) {
+		this.assetsMuiBaseUrl = assetsMuiBaseUrl;
+	}
 	public String getAssetsUrl() {
 		return assetsUrl;
 	}
@@ -75,4 +90,6 @@ public class Modules {
 	public void setMemberBaseUrl(String memberBaseUrl) {
 		this.memberBaseUrl = memberBaseUrl;
 	}
+	
+	
 }

@@ -43,5 +43,15 @@
     "name": "modules.gateway-url",
     "type": "java.lang.String",
     "description": "A description for 'modules.gateway-url'"
+  },
+  {
+    "name": "modules.assets-mui-url",
+    "type": "java.lang.String",
+    "description": "A description for 'modules.assets-mui-url'"
+  },
+  {
+    "name": "modules.assets-mui-base-url",
+    "type": "java.lang.String",
+    "description": "A description for 'modules.assets-mui-base-url'"
   }
 ]}
