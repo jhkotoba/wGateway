@@ -35,7 +35,7 @@ public class WGatewayRoute {
 							.value().startsWith("/member"))				
 				//자산관리 MO 페이지 이동
 				).route("wAssetsMUI", r -> r
-					.path("/assets")					
+					.path("/assets*")					
 					.uri(modules.getAssetsMuiBaseUrl())					
 					.predicate(serverWebExchange -> {
 						//headers의 User-Agent체크하여 디바이스 구분
@@ -59,7 +59,7 @@ public class WGatewayRoute {
 					})
 				//자산관리 PC 페이지 이동
 				).route("wAssetsPUI", r -> r
-					.path("/assets")					
+					.path("/assets*")					
 					.uri(modules.getAssetsPuiBaseUrl())
 					.predicate(serverWebExchange -> serverWebExchange
 							.getRequest()
