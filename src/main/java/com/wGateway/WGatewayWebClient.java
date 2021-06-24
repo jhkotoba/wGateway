@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -72,7 +71,7 @@ public class WGatewayWebClient {
 	 * @return
 	 */
 	@PostMapping(value = "/api/{module}/{apiurl}")
-	public Mono<?> postMonoApi(ServerHttpRequest request, @RequestBody Map<String, Object> bodyValue, 
+	public Mono<?> postMonoApi(ServerHttpRequest request, @RequestBody Object bodyValue, 
 			@PathVariable String module, @PathVariable String apiurl) {		
 				
 		WebClient webClient = builder.build();		
@@ -102,44 +101,6 @@ public class WGatewayWebClient {
 		        .bodyValue(bodyValue)
 				.retrieve()
 				.bodyToMono(Map.class);
-	}
-	
-	/**
-	 * POST API(Flux)
-	 * @param request, bodyValue, module, apiurl
-	 * @return
-	 */
-	@PostMapping(value = "/api/{module}/{apiurl}/list")
-	public Flux<?> postFluxApi(ServerHttpRequest request, @RequestBody Object bodyValue, 
-			@PathVariable String module, @PathVariable String apiurl) {		
-				
-		WebClient webClient = builder.build();		
-		StringBuilder uri = null;
-		
-		switch(module) {
-		case "admin" : uri = new StringBuilder(modules.getAdminUrl()); break;
-		case "assets" : uri = new StringBuilder(modules.getAssetsUrl()); break;
-		case "member" : uri = new StringBuilder(modules.getMemberUrl()); break;
-		default : return null;
-		}
-		
-		uri
-		.append(Constant.SLASH).append(Constant.API)
-		.append(Constant.SLASH).append(module)
-		.append(Constant.SLASH).append(apiurl);		
-		
-		return webClient.post()
-				.uri(uri.toString())
-				.cookies(cookies -> {					
-					for (String key : request.getCookies().keySet()) {
-						cookies.add(key, request.getCookies().get(key).get(0).getValue());
-					}
-				})
-				.contentType(MediaType.APPLICATION_JSON)
-		        .accept(MediaType.APPLICATION_JSON)
-		        .bodyValue(bodyValue)
-				.retrieve()
-				.bodyToFlux(Map.class);
 	}
 	
 	/**
